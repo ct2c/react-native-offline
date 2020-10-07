@@ -1,67 +1,65 @@
 import React from 'react';
 import { Platform } from 'react-native';
-import {
-  createStackNavigator,
-  createBottomTabNavigator,
-} from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
 
-import TabBarIcon from '../components/TabBarIcon';
+// import TabBarIcon from '../components/TabBarIcon';
 import ComponentsScreen from '../screens/ComponentsScreen';
-import ReduxScreen from '../screens/ReduxScreen';
-import SagasScreen from '../screens/SagasScreen';
+// import ReduxScreen from '../screens/ReduxScreen';
+// import SagasScreen from '../screens/SagasScreen';
 
 const ComponentsStack = createStackNavigator({
   Components: ComponentsScreen,
 });
 
-type TabBarIconArgs = {
-  focused: boolean;
-};
+// type TabBarIconArgs = {
+//   focused: boolean;
+// };
 
-ComponentsStack.navigationOptions = {
-  tabBarLabel: 'Components',
-  tabBarIcon: ({ focused }: TabBarIconArgs) => (
-    <TabBarIcon
-      focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
-      }
-    />
-  ),
-};
+// ComponentsStack.navigationOptions = {
+//   tabBarLabel: 'Components',
+//   tabBarIcon: ({ focused }: TabBarIconArgs) => (
+//     <TabBarIcon
+//       focused={focused}
+//       name={
+//         Platform.OS === 'ios'
+//           ? `ios-information-circle${focused ? '' : '-outline'}`
+//           : 'md-information-circle'
+//       }
+//     />
+//   ),
+// };
 
-const ReduxStack = createStackNavigator({
-  Redux: ReduxScreen,
-});
+// const ReduxStack = createStackNavigator({
+//   Redux: ReduxScreen,
+// });
 
-ReduxStack.navigationOptions = {
-  tabBarLabel: 'Redux',
-  tabBarIcon: ({ focused }: TabBarIconArgs) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
-    />
-  ),
-};
+// ReduxStack.navigationOptions = {
+//   tabBarLabel: 'Redux',
+//   tabBarIcon: ({ focused }: TabBarIconArgs) => (
+//     <TabBarIcon
+//       focused={focused}
+//       name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
+//     />
+//   ),
+// };
 
-const SagasStack = createStackNavigator({
-  Sagas: SagasScreen,
-});
+// const SagasStack = createStackNavigator({
+//   Sagas: SagasScreen,
+// });
 
-SagasStack.navigationOptions = {
-  tabBarLabel: 'Sagas',
-  tabBarIcon: ({ focused }: TabBarIconArgs) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
-    />
-  ),
-};
+// SagasStack.navigationOptions = {
+//   tabBarLabel: 'Sagas',
+//   tabBarIcon: ({ focused }: TabBarIconArgs) => (
+//     <TabBarIcon
+//       focused={focused}
+//       name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
+//     />
+//   ),
+// };
 
 export default createBottomTabNavigator({
   ComponentsStack,
-  ReduxStack,
-  SagasStack,
+  // ReduxStack,
+  // SagasStack,
 });

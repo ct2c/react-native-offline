@@ -33,13 +33,12 @@ export default class App extends React.Component<Props, State> {
   async componentDidMount() {
     await Font.loadAsync({
       ...Ionicons.font,
-      'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf'),
     });
     this.setState({ isLoadingComplete: true });
   }
 
   toggleConnection = () => {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       network: {
         ...prevState.network,
         pingUrl:
